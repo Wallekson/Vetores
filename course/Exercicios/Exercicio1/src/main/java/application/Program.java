@@ -10,19 +10,21 @@ public class Program {
         Scanner sc = new Scanner(System.in);
 
 
-        System.out.println("Quantos numeros voce vai digitar? ");
+        System.out.print("Quantos numeros voce vai digitar? ");
         int n = sc.nextInt();
         int[] vect = new int[n];
 
         int negNum = 0;
-        for (int i = 0; i < vect.length; i++){
-            System.out.println("Digite um número: ");
+        for (int i = 0; i < vect.length; i++) {
+            System.out.print("Digite um número: ");
             vect[i] = sc.nextInt();
-            if (vect[i] < 0){
-                negNum = vect[i];
+        }
+
+        System.out.println("NUMEROS NEGATIVOS");
+        for (int i = 0; i < n; i++) {
+            if (vect[i] < 0) {
+                System.out.println(vect[i]);
             }
-            System.out.println("NUMEROS NEGATIVOS");
-            System.out.println(negNum);
         }
 
     }
