@@ -16,20 +16,19 @@ public class application {
         double maior = 0.0;
         int posicao = 0;
         for (int i = 0; i < vect.length; i++) {
-            System.out.println("Digite um numero: ");
+            System.out.print("Digite um numero: ");
             vect[i] = sc.nextDouble();
 
 
         }
-        double num;
+        double num = 0;
         for (int i = 0; i < vect.length; i++) {
-            num = vect[i];
-            if (num > vect[i]) {
-                maior = num;
+            if (vect[i] > num) {
+                num = vect[i];
                 posicao = i;
             }
         }
-        System.out.println("MAIOR VALOR = " + maior);
+        System.out.println("MAIOR VALOR = " + num);
         System.out.println("POSIÇÃO DO MAIOR VALOR = " + posicao);
     }
 }
