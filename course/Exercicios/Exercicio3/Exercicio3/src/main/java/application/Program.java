@@ -41,11 +41,15 @@ public class Program {
         for (int i = 0; i < vect.length;i++){
             if (vect[i].getAge() < 16){
                 perc = +1;
+                System.out.println(vect[i].getName());
+
             }
         }
-        System.out.printf("Pessoas com menos de 16 anos: %.2f", avg);
 
         double med = perc * 100 / vect.length;
+        System.out.println();
+        System.out.print("Pessoas com menos de 16 anos: " + med + "%");
+
 
 
 
