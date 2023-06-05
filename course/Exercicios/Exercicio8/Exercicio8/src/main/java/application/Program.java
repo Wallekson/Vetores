@@ -15,25 +15,29 @@ public class Program {
         int n = sc.nextInt();
         double[] vect = new double[n];
 
+        double  somaImpar = 0.0;
         double soma = 0.0;
         for (int i = 0; i < vect.length; i++) {
             System.out.print("Digite um numero: ");
             vect[i] = sc.nextDouble();
             if (vect[i] % 2 == 0){
                 soma += vect[i];
+            } else {
+                somaImpar += vect[i];
             }
         }
 
 
         double avg = soma / vect.length;
+        ;
 
-        for (int i = 0; i < vect.length; i++) {
-            if (vect[i] % 2 == 1){
+
+            if (somaImpar % 2 == 1){
                 System.out.println("NENHUM NUMERO PAR ");
             }else {
                 System.out.printf("MEDIA DOS PARES = %.1f", avg);
             }
-        }
+
 
 
 
