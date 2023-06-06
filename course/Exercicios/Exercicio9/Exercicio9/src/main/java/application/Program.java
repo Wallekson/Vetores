@@ -10,35 +10,37 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Quantos valores terá cada vetor? ");
+        System.out.print("Quantas pessoas você vai digitar? ");
         int n = sc.nextInt();
         String[] vectName = new String[n];
         int[] vectAge = new int[n];
+        String name = null;
 
 
 
-        for (int i = 0; i < vectA.length; i++){
-            System.out.println("Digite os valores do vetor A:");
-            vectA[i] = sc.nextInt();
-            System.out.println("Digite os valores do vetor A:");
-            vectA[i] = sc.nextInt();
+        for (int i = 0; i < n; i++){
+            System.out.println("Dados da " + i + "ª pessoa: ");
+            sc.nextLine();
+            System.out.print("Nome: ");
+            vectName[i] = sc.nextLine();
+            System.out.print("Idade: ");
+            vectAge[i] = sc.nextInt();
 
 
 
         }
 
-        System.out.println("Digite os valores do vetor B:");
-        for (int i = 0; i < vectB.length; i++){
-            vectB[i] = sc.nextInt();
+        int age = 0;
+        for (int i = 0; i < n; i++){
+            if (vectAge[i] > age){
+                age = vectAge[i];
+                name = vectName[i];
 
-
+            }
         }
+        System.out.print("PESSOA MAIS VELHA: ");
+        System.out.print(name);
 
-        System.out.println("VETOR RESULTANTE");
-        for (int i = 0; i < vectC.length; i++){
-            vectC[i] = vectA[i] + vectB[i];
-            System.out.println(vectC[i]);
-        }
 
 
         sc.close();
