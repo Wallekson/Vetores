@@ -10,36 +10,39 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
+        int n, maioridade, posicaomaoir;
+
         System.out.print("Quantas pessoas você vai digitar? ");
-        int n = sc.nextInt();
-        String[] vectName = new String[n];
-        int[] vectAge = new int[n];
-        String name = null;
+        n = sc.nextInt();
+        String[] nome = new String[n];
+        int[] idade = new int[n];
+
 
 
 
         for (int i = 0; i < n; i++){
-            System.out.println("Dados da " + i + "ª pessoa: ");
+            System.out.printf("Dados da %da pessoa: \n", i + 1);
             sc.nextLine();
             System.out.print("Nome: ");
-            vectName[i] = sc.nextLine();
+            nome[i] = sc.nextLine();
             System.out.print("Idade: ");
-            vectAge[i] = sc.nextInt();
+            idade[i] = sc.nextInt();
 
 
 
         }
-
+        maioridade = idade[0];
+        posicaomaoir = 0;
         int age = 0;
-        for (int i = 0; i < n; i++){
-            if (vectAge[i] > age){
-                age = vectAge[i];
-                name = vectName[i];
+        for (int i = 1; i < n; i++){
+            if (idade[i] > maioridade){
+                maioridade = idade[i];
+                posicaomaoir = i;
 
             }
         }
-        System.out.print("PESSOA MAIS VELHA: ");
-        System.out.print(name);
+        System.out.printf("PESSOA MAIS VELHA: %s\n", (nome[posicaomaoir]));
+
 
 
 
