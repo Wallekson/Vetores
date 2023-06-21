@@ -12,26 +12,32 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
+        int n;
+        double soma, media;
+
         System.out.print("Quantos numeros deseja digitar? ");
-        int n = sc.nextInt();
+        n = sc.nextInt();
         double[] vect = new double[n];
 
-        double soma = 0.0;
         for (int i = 0; i < vect.length; i++) {
             System.out.print("Digite um numero: ");
             vect[i] = sc.nextDouble();
+        }
+
+        soma = 0;
+        for(int i = 0; i < vect.length; i++) {
             soma += vect[i];
         }
 
-        double avg = soma / vect.length;
+         media = soma / vect.length;
 
-        System.out.printf("MEDIA DO VETOR = %.3f", avg);
-        System.out.println();
+
+        System.out.printf("\nMEDIA DO VETOR = %.3f\n", media);
         System.out.println("ELEMENTOS ABAIXO DA MÉDIA = ");
 
         for (int i = 0; i < vect.length; i++) {
-            if (vect[i] < avg){
-                System.out.println(vect[i]);
+            if (vect[i] < media){
+                System.out.printf("%.1f\n", vect[i]);
             }
         }
 

@@ -1,7 +1,9 @@
+package application;
+
 import java.util.Locale;
 import java.util.Scanner;
 
-public class application {
+public class Program {
 
 
     public static void main(String[] args) {
@@ -9,26 +11,31 @@ public class application {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
+        int n, posicaoMarior;
+        double maior;
+
         System.out.print("Quantos numeros deseja digitar? ");
-        int n = sc.nextInt();
+        n = sc.nextInt();
         double[] vect = new double[n];
 
-        double maior = 0.0;
-        int posicao = 0;
         for (int i = 0; i < vect.length; i++) {
             System.out.print("Digite um numero: ");
             vect[i] = sc.nextDouble();
 
 
         }
-        double num = 0;
+
+        maior = vect[0];
+        posicaoMarior = 0;
         for (int i = 0; i < vect.length; i++) {
-            if (vect[i] > num) {
-                num = vect[i];
-                posicao = i;
+            if (vect[i] > maior) {
+                maior = vect[i];
+                posicaoMarior = i;
             }
         }
-        System.out.println("MAIOR VALOR = " + num);
-        System.out.println("POSIÇÃO DO MAIOR VALOR = " + posicao);
+        System.out.printf("MAIOR VALOR = %.1f\n" , maior);
+        System.out.printf("POSIÇÃO DO MAIOR VALOR = %d\n", posicaoMarior);
+
+        sc.close();
     }
 }

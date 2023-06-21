@@ -12,16 +12,19 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
+        int n, menor;
+        double media, perc, soma;
+
         System.out.print("Quantas pessoas serão digitadas? ");
-        int n = sc.nextInt();
+        n = sc.nextInt();
 
         Heigth[] vect = new Heigth[n];
 
-        for(int i = 0; i < vect.length; i++){
-            System.out.println("Dados da " + i + "a pessoa: ");
-            System.out.print("Nome: ");
-            String name = sc.nextLine();
+        for (int i = 0; i < vect.length; i++) {
+            System.out.printf("Dados da %da pessoa: ", i + 1);
             sc.nextLine();
+            System.out.printf("\nNome: ");
+            String name = sc.nextLine();
             System.out.print("Idade: ");
             int age = sc.nextInt();
             System.out.print("Altura: ");
@@ -29,30 +32,28 @@ public class Program {
             vect[i] = new Heigth(name, age, heigth);
         }
 
-        double sum = 0.0;
-        for (int i = 0; i < vect.length;i++){
-            sum += vect[i].getHeight();
+
+        menor = 0;
+        soma = 0;
+        for (int i = 0; i < vect.length; i++) {
+            if (vect[i].getAge() < 16) {
+                menor++;
+            }
+            soma += vect[i].getHeight();
         }
 
-        double avg = sum / vect.length;
-        System.out.printf("Altura média: %.2f", avg);
+        media = soma / vect.length;
+        perc = ((double) menor * 100) / vect.length;
+        System.out.printf("Altura média: %.2f", media);
+        System.out.printf("\nPessoas com menos de 16 anos: %.1f%%\n ", perc);
 
-        double perc = 0;
-        for (int i = 0; i < vect.length;i++){
-            if (vect[i].getAge() < 16){
-                perc = +1;
-                System.out.println(vect[i].getName());
 
+        for (int i = 0; i < vect.length; i++) {
+            if (vect[i].getAge() < 16) {
+                System.out.printf("%s\n", vect[i].getName());
             }
         }
 
-        double med = perc * 100 / vect.length;
-        System.out.println();
-        System.out.print("Pessoas com menos de 16 anos: " + med + "%");
-
-
-
-
-
+        sc.close();
     }
 }

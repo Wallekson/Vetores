@@ -18,16 +18,19 @@ public class Program {
             System.out.print("Digite um numero: ");
             vect[i] = sc.nextInt();
         }
-        System.out.println();
-        System.out.println("NUMEROS PARES: ");
+
+        System.out.println("\nNUMEROS PARES: ");
+
         int quantPar = 0;
         for (int i = 0; i < vect.length; i++){
             if (vect[i] % 2 == 0){
-                System.out.print(vect[i] + " ");
-                quantPar += + 1;
+                System.out.printf("%d ",vect[i]);
+                quantPar++;
             }
         }
-        System.out.println();
-        System.out.println("QUANTIDADE DE PARES = " + quantPar);
+
+        System.out.printf("\n\nQUANTIDADE DE PARES = %d\n" + quantPar);
+
+        sc.close();
     }
 }

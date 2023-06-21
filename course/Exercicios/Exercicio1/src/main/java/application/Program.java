@@ -23,10 +23,10 @@ public class Program {
         System.out.println("NUMEROS NEGATIVOS");
         for (int i = 0; i < n; i++) {
             if (vect[i] < 0) {
-                System.out.println(vect[i]);
+                System.out.printf("%.d\n",vect[i]);
             }
         }
-
+        sc.close();
     }
 
 }

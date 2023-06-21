@@ -12,30 +12,30 @@ public class Program {
 
         System.out.print("Quantos valores terá cada vetor? ");
         int n = sc.nextInt();
-        int[] vectA = new int[n];
-        int[] vectB = new int[n];
-        int[] vectC = new int[n];
+        int[] a = new int[n];
+        int[] b = new int[n];
+        int[] c = new int[n];
 
 
 
         System.out.println("Digite os valores do vetor A:");
-        for (int i = 0; i < vectA.length; i++){
-            vectA[i] = sc.nextInt();
+        for (int i = 0; i < a.length; i++){
+            a[i] = sc.nextInt();
 
 
         }
 
         System.out.println("Digite os valores do vetor B:");
-        for (int i = 0; i < vectB.length; i++){
-            vectB[i] = sc.nextInt();
+        for (int i = 0; i < b.length; i++){
+            b[i] = sc.nextInt();
 
 
         }
 
         System.out.println("VETOR RESULTANTE");
-        for (int i = 0; i < vectC.length; i++){
-            vectC[i] = vectA[i] + vectB[i];
-            System.out.println(vectC[i]);
+        for (int i = 0; i < c.length; i++){
+            c[i] = a[i] + b[i];
+            System.out.printf("%d\n",c[i]);
         }
 
 
